@@ -68,7 +68,6 @@ class RegistrationForm extends Component {
   }
 
   _saveCustomer(event) {
-    console.log('entrei')
     event.preventDefault()
     event.stopPropagation()
     this.props.saveCustomer(this.name, this.email, this.cpf, this.phone, this.cep, this.publicarea, this.number, this.district, this.city, this.estado)

@@ -1,6 +1,7 @@
 import './assets/App.css'
 import React, { Component } from 'react';
 import RegistrationForm from './components/RegistrationForm/RegistrationForm';
+import CustomerTable from './components/CustomerTable/CustomerTable';
 
 class App extends Component {
 
@@ -19,13 +20,13 @@ class App extends Component {
       customers: newArrayCustomers
     }
     this.setState(newState)
-    console.log(newState.customers)
   }
 
   render() { 
     return ( 
     <div className="App">
       <RegistrationForm saveCustomer = {this.saveCustomer.bind(this)}/>
+      <CustomerTable customers = {this.state.customers}/>
     </div> );
   }
 }
