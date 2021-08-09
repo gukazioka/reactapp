@@ -19,6 +19,8 @@ class App extends Component {
     const newState = {
       customers: newArrayCustomers
     }
+    Array.from(document.querySelectorAll('input')).forEach(
+      input => (input.value = ''))
     this.setState(newState)
   }
 

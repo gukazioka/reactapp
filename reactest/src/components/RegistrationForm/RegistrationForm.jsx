@@ -17,6 +17,19 @@ class RegistrationForm extends Component {
     this.estado = '';
   }
 
+  _handleResetInput(){
+    this.name = '';
+    this.email = '';
+    this.cpf = '';
+    this.phone = '';
+    this.cep = '';
+    this.publicarea = '';
+    this.number = '';
+    this.district = '';
+    this.city = '';
+    this.estado = '';
+  }
+
   _handleMudancaNome(event) {
     event.stopPropagation()
     this.name = event.target.value
@@ -71,6 +84,7 @@ class RegistrationForm extends Component {
     event.preventDefault()
     event.stopPropagation()
     this.props.saveCustomer(this.name, this.email, this.cpf, this.phone, this.cep, this.publicarea, this.number, this.district, this.city, this.estado)
+    this._handleResetInput()
   }
 
   render() {
