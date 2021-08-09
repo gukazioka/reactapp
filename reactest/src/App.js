@@ -1,10 +1,31 @@
 import './assets/App.css'
 import React, { Component } from 'react';
+import RegistrationForm from './components/RegistrationForm/RegistrationForm';
 
 class App extends Component {
-  state = {  }
+
+  constructor(){
+    super()
+    this.customers = []
+    this.state = {
+      customers: []
+    }
+  }
+
+  saveCustomer(name, email, cpf, phone, cep, publicarea, number, district, city, state){
+    const newCustomer = {name, email, cpf, phone, cep, publicarea, number, district, city, state}
+    const newArrayCustomers = [...this.state.customers, newCustomer]
+    const newState = {
+      customers: newArrayCustomers
+    }
+    this.setState(newState)
+    console.log(newState.customers)
+  }
+
   render() { 
-    return ( <div className="App">
+    return ( 
+    <div className="App">
+      <RegistrationForm saveCustomer = {this.saveCustomer.bind(this)}/>
     </div> );
   }
 }
