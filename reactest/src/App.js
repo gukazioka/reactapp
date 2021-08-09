@@ -2,6 +2,7 @@ import './assets/App.css'
 import React, { Component } from 'react';
 import RegistrationForm from './components/RegistrationForm/RegistrationForm';
 import CustomerTable from './components/CustomerTable/CustomerTable';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
 
