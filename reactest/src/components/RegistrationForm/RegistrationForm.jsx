@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './style.css'
+import { Form, Row, Col, Button } from 'react-bootstrap';
+import "./style.css"
 
 class RegistrationForm extends Component {
 
@@ -17,7 +18,7 @@ class RegistrationForm extends Component {
     this.estado = '';
   }
 
-  _handleResetInput(){
+  _handleResetInput() {
     this.name = '';
     this.email = '';
     this.cpf = '';
@@ -89,6 +90,78 @@ class RegistrationForm extends Component {
 
   render() {
     return (
+      <div className = "registration-form_section">
+        <Form onSubmit={this._saveCustomer.bind(this)}>
+        <Row className="mb-3">
+          <Form.Group as={Col}>
+            <Form.Label>Nome</Form.Label>
+            <Form.Control type="text" placeholder="Seu nome" 
+            onChange={this._handleMudancaNome.bind(this)}/>
+          </Form.Group>
+          <Form.Group as={Col}>
+            <Form.Label>E-mail</Form.Label>
+            <Form.Control type="email" placeholder="Seu e-mail"
+            onChange={this._handleMudancaEmail.bind(this)} />
+          </Form.Group>
+        </Row>
+
+        <Row className="mb-3">
+          <Form.Group as={Col}>
+            <Form.Label>CPF ou CNPJ</Form.Label>
+            <Form.Control type="text" placeholder="Seu CPF ou CNPJ"
+            onChange={this._handleMudancaCPF.bind(this)} />
+          </Form.Group>
+          <Form.Group as={Col}>
+            <Form.Label>Telefone</Form.Label>
+            <Form.Control type="text" placeholder="Seu telefone"
+            onChange={this._handleMudancaPhone.bind(this)} />
+          </Form.Group>
+          <Form.Group as={Col}>
+            <Form.Label>CEP</Form.Label>
+            <Form.Control type="text" placeholder="Seu CEP"
+            onChange={this._handleMudancaCEP.bind(this)} />
+          </Form.Group>
+        </Row>
+
+        <Row className="mb-3">
+          <Form.Group as={Col}>
+            <Form.Label>Logradouro</Form.Label>
+            <Form.Control type="text" placeholder="Seu logradouro" 
+            onChange={this._handleMudancaPublicArea.bind(this)} />
+          </Form.Group>
+          <Form.Group as={Col} xs ={1}>
+            <Form.Label>Número</Form.Label>
+            <Form.Control type="text"
+            onChange={this._handleMudancaNumber.bind(this)} />
+          </Form.Group>
+        </Row>
+
+        <Row>
+          <Form.Group as={Col}>
+            <Form.Label>Bairro</Form.Label>
+            <Form.Control type="text" placeholder="Seu bairro" 
+            onChange={this._handleMudancaDistrict.bind(this)} />
+          </Form.Group>
+          <Form.Group as={Col}>
+            <Form.Label>Cidade</Form.Label>
+            <Form.Control type="text" placeholder="" 
+            onChange={this._handleMudancaCity.bind(this)} />
+          </Form.Group>
+          <Form.Group as={Col}>
+            <Form.Label>Estado</Form.Label>
+            <Form.Control type="text" placeholder=""
+            onChange={this._handleMudancaEstado.bind(this)} />
+          </Form.Group>
+        </Row>
+        <Button variant="primary" type="submit">
+          Cadastrar
+        </Button>
+      </Form>
+      </div>
+    );
+  }
+  /*render() {
+    return (
       <form onSubmit={this._saveCustomer.bind(this)}>
         <input
           type='text'
@@ -132,7 +205,7 @@ class RegistrationForm extends Component {
         />
       </form>
     );
-  }
+  }*/
 }
 
 export default RegistrationForm;
