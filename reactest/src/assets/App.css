@@ -1,7 +1,12 @@
 .App{
   display: flex;
-  background-color: #05345F;
+  background-color: #8a5d3b;
   min-height: 100vh;
   flex-direction: column;
 }
 
+.App_logo{
+  margin-top: 20px;
+  margin-bottom: 15px;
+  max-height: 50px;
+}

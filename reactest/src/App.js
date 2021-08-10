@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import RegistrationForm from './components/RegistrationForm/RegistrationForm';
 import CustomerTable from './components/CustomerTable/CustomerTable';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import logoSVG from './assets/img/logo.svg'
 class App extends Component {
 
   constructor(){
@@ -34,6 +34,7 @@ class App extends Component {
   render() { 
     return ( 
     <div className="App">
+      <img className="App_logo" src={logoSVG}/>
       <RegistrationForm saveCustomer = {this.saveCustomer.bind(this)}/>
       <CustomerTable delCustomer = {this.delCustomer.bind(this)} customers = {this.state.customers}/>
     </div> );
