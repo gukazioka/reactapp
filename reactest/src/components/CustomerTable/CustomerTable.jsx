@@ -1,34 +1,51 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Table } from 'react-bootstrap'
+import './style.css'
+import CustomerRow from '../CustomerRow/CustomerRow'
 
 class CustomerTable extends Component {
+
   render() {
     return (
-      <table>
-        <tr>
-          <td>Nome</td>
-          <td>E-mail</td>
-          <td>CPF ou CNPJ</td>
-          <td>CEP</td>
-          <td>Logradouro</td>
-          <td>Número</td>
-          <td>Bairro</td>
-          <td>Cidade</td>
-          <td>Estado</td>
-        </tr>
-        {this.props.customers.map(valor => {
-          return (<tr>
-            <td>{valor.name}</td>
-            <td>{valor.email}</td>
-            <td>{valor.cpf}</td>
-            <td>{valor.phone}</td>
-            <td>{valor.cep}</td>
-            <td>{valor.publicarea}</td>
-            <td>{valor.number}</td>
-            <td>{valor.district}</td>
-            <td>{valor.state}</td>
-          </tr>);
-        })}
-      </table>
+      <div className="customer-table_section">
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>CPF ou CNPJ</th>
+              <th>Telefone</th>
+              <th>CEP</th>
+              <th>Logradouro</th>
+              <th>Número</th>
+              <th>Bairro</th>
+              <th>Cidade</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.props.customers.map((valor,index) => {
+              return (
+                <CustomerRow
+                  index = {index}
+                  delCustomer = {this.props.delCustomer}
+                  name = {valor.name}
+                  email = {valor.email}
+                  cpf = {valor.cpf}
+                  phone = {valor.phone}
+                  cep = {valor.cep}
+                  publicarea = {valor.publicarea}
+                  number = {valor.number}
+                  district = {valor.district}
+                  city = {valor.city}
+                  state = {valor.state}
+                />
+              );
+            })}
+          </tbody>
+        </Table>
+      </div>
     );
   }
 }

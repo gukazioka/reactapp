@@ -25,11 +25,17 @@ class App extends Component {
     this.setState(newState)
   }
   
+  delCustomer(index){
+    let arrayCustomer = this.state.customers
+    arrayCustomer.splice(index, 1);
+    this.setState({customers: arrayCustomer})
+  }
+
   render() { 
     return ( 
     <div className="App">
       <RegistrationForm saveCustomer = {this.saveCustomer.bind(this)}/>
-      <CustomerTable customers = {this.state.customers}/>
+      <CustomerTable delCustomer = {this.delCustomer.bind(this)} customers = {this.state.customers}/>
     </div> );
   }
 }
