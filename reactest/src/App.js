@@ -24,7 +24,7 @@ class App extends Component {
       input => (input.value = ''))
     this.setState(newState)
   }
-
+  
   render() { 
     return ( 
     <div className="App">
