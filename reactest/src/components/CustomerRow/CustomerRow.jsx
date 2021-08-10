@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {ReactComponent as DeleteSVG} from '../../assets/img/delete.svg'
-
+import './style.css'
 class DeleteButton extends Component {
 
     _delCustomer(){
@@ -11,7 +11,7 @@ class DeleteButton extends Component {
     render() { 
         return ( 
             <tr>
-                <td><DeleteSVG onClick = {this._delCustomer.bind(this)}/></td>
+                <td className = 'customer-row_cell'><DeleteSVG onClick = {this._delCustomer.bind(this)}/></td>
                 <td>{this.props.name}</td>
                 <td>{this.props.email}</td>
                 <td>{this.props.cpf}</td>

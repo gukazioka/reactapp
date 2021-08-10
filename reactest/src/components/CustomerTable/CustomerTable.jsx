@@ -8,10 +8,10 @@ class CustomerTable extends Component {
   render() {
     return (
       <div className="customer-table_section">
-        <Table striped bordered hover>
+        <Table responsive striped bordered hover>
           <thead>
             <tr>
-              <th>#</th>
+              <th className='customer-table_header'>#</th>
               <th>Nome</th>
               <th>E-mail</th>
               <th>CPF ou CNPJ</th>
