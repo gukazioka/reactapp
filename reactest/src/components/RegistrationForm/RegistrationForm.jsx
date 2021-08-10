@@ -95,12 +95,12 @@ class RegistrationForm extends Component {
         <Row className="mb-3">
           <Form.Group as={Col}>
             <Form.Label>Nome</Form.Label>
-            <Form.Control type="text" placeholder="Seu nome" 
+            <Form.Control type="text" 
             onChange={this._handleMudancaNome.bind(this)}/>
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>E-mail</Form.Label>
-            <Form.Control type="email" placeholder="Seu e-mail"
+            <Form.Control type="email" 
             onChange={this._handleMudancaEmail.bind(this)} />
           </Form.Group>
         </Row>
@@ -108,17 +108,17 @@ class RegistrationForm extends Component {
         <Row className="mb-3">
           <Form.Group as={Col}>
             <Form.Label>CPF ou CNPJ</Form.Label>
-            <Form.Control type="text" placeholder="Seu CPF ou CNPJ"
+            <Form.Control type="text" 
             onChange={this._handleMudancaCPF.bind(this)} />
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>Telefone</Form.Label>
-            <Form.Control type="text" placeholder="Seu telefone"
+            <Form.Control type="text" 
             onChange={this._handleMudancaPhone.bind(this)} />
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>CEP</Form.Label>
-            <Form.Control type="text" placeholder="Seu CEP"
+            <Form.Control type="text" 
             onChange={this._handleMudancaCEP.bind(this)} />
           </Form.Group>
         </Row>
@@ -126,7 +126,7 @@ class RegistrationForm extends Component {
         <Row className="mb-3">
           <Form.Group as={Col}>
             <Form.Label>Logradouro</Form.Label>
-            <Form.Control type="text" placeholder="Seu logradouro" 
+            <Form.Control type="text" 
             onChange={this._handleMudancaPublicArea.bind(this)} />
           </Form.Group>
           <Form.Group as={Col} xs ={1}>
@@ -139,21 +139,21 @@ class RegistrationForm extends Component {
         <Row>
           <Form.Group as={Col}>
             <Form.Label>Bairro</Form.Label>
-            <Form.Control type="text" placeholder="Seu bairro" 
+            <Form.Control type="text" 
             onChange={this._handleMudancaDistrict.bind(this)} />
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>Cidade</Form.Label>
-            <Form.Control type="text" placeholder="" 
+            <Form.Control type="text" 
             onChange={this._handleMudancaCity.bind(this)} />
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>Estado</Form.Label>
-            <Form.Control type="text" placeholder=""
+            <Form.Control type="text" 
             onChange={this._handleMudancaEstado.bind(this)} />
           </Form.Group>
         </Row>
-        <Button variant="primary" type="submit">
+        <Button className="registration-form_button" type="submit">
           Cadastrar
         </Button>
       </Form>

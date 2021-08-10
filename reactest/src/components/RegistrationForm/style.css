@@ -1,7 +1,12 @@
 .registration-form_section{
-    background-color: white;
-    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.938);
+    border-radius: 10px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
     padding: 2%;
     margin: 1% 2%;
+}
+
+.registration-form_button{
+    background-color: #05345F !important;
+    margin-top: 15px;
 }
