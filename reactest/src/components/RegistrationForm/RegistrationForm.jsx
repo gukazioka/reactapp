@@ -88,6 +88,18 @@ class RegistrationForm extends Component {
     this._handleResetInput()
   }
 
+  _onlyNumber(event){
+      if (!/[0-9]/.test(event.key)) {
+        event.preventDefault();
+      }
+  }
+
+  _onlyLetters(event){
+    if (!/^[a-zA-Z\s]*$/.test(event.key)) {
+      event.preventDefault();
+    }
+  }
+
   render() {
     return (
       <div className = "registration-form_section">
@@ -96,7 +108,9 @@ class RegistrationForm extends Component {
           <Form.Group as={Col}>
             <Form.Label>Nome</Form.Label>
             <Form.Control type="text" 
-            onChange={this._handleMudancaNome.bind(this)}/>
+            onKeyPress={this._onlyLetters.bind(this)}
+            onChange={this._handleMudancaNome.bind(this)}
+            required/>
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>E-mail</Form.Label>
@@ -109,16 +123,20 @@ class RegistrationForm extends Component {
           <Form.Group as={Col}>
             <Form.Label>CPF ou CNPJ</Form.Label>
             <Form.Control type="text" 
-            onChange={this._handleMudancaCPF.bind(this)} />
+            onKeyPress={this._onlyNumber.bind(this)}
+            onChange={this._handleMudancaCPF.bind(this)}
+            required/>
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>Telefone</Form.Label>
             <Form.Control type="text" 
+            onKeyPress={this._onlyNumber.bind(this)}
             onChange={this._handleMudancaPhone.bind(this)} />
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>CEP</Form.Label>
             <Form.Control type="text" 
+            onKeyPress={this._onlyNumber.bind(this)}
             onChange={this._handleMudancaCEP.bind(this)} />
           </Form.Group>
         </Row>
@@ -132,6 +150,7 @@ class RegistrationForm extends Component {
           <Form.Group as={Col} xs ={1}>
             <Form.Label>Número</Form.Label>
             <Form.Control type="text"
+            onKeyPress={this._onlyNumber.bind(this)}
             onChange={this._handleMudancaNumber.bind(this)} />
           </Form.Group>
         </Row>
@@ -150,6 +169,7 @@ class RegistrationForm extends Component {
           <Form.Group as={Col}>
             <Form.Label>Estado</Form.Label>
             <Form.Control type="text" 
+            onKeyPress={this._onlyLetters.bind(this)}
             onChange={this._handleMudancaEstado.bind(this)} />
           </Form.Group>
         </Row>
@@ -160,52 +180,6 @@ class RegistrationForm extends Component {
       </div>
     );
   }
-  /*render() {
-    return (
-      <form onSubmit={this._saveCustomer.bind(this)}>
-        <input
-          type='text'
-          placeholder='Nome'
-          onChange={this._handleMudancaNome.bind(this)}
-        />
-        <input type='text'
-          placeholder='E-mail'
-          onChange={this._handleMudancaEmail.bind(this)}
-        />
-        <input type='text'
-          placeholder='CPF ou CNPJ'
-          onChange={this._handleMudancaCPF.bind(this)}
-        />
-        <input type='text'
-          placeholder='CEP'
-          onChange = {this._handleMudancaCEP.bind(this)}
-        />
-        <input type='text'
-          placeholder='Logradouro'
-          onChange = {this._handleMudancaPublicArea.bind(this)}
-        />
-        <input type='text'
-          placeholder='Número'
-          onChange = {this._handleMudancaNumber.bind(this)}
-        />
-        <input type='text'
-          placeholder='Bairro'
-          onChange = {this._handleMudancaDistrict.bind(this)}
-        />
-        <input type='text'
-          placeholder='Cidade'
-          onChange = {this._handleMudancaCity.bind(this)}
-        />
-        <input type='text'
-          placeholder='Estado'
-          onChange = {this._handleMudancaEstado.bind(this)}
-        />
-        <input type='submit'
-          value='Inscrever'
-        />
-      </form>
-    );
-  }*/
 }
 
 export default RegistrationForm;

@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import RegistrationForm from './components/RegistrationForm/RegistrationForm';
 import CustomerTable from './components/CustomerTable/CustomerTable';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logoSVG from './assets/img/logo.svg'
+import logoSVG from './assets/img/logo.svg';
+
 class App extends Component {
 
   constructor(){
